@@ -1,0 +1,4 @@
+{   "tipi-deps/libmicrohttpd" : { } 
+    ,"libuv/libuv":{"u":true, "packages":["libuv"],"src/targets":["uv"]}
+    ,"platform" :[ "CURL::+libcurl" ]
+}
