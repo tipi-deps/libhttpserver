@@ -20,8 +20,8 @@ If you want to use this library with tipi you can do :
 
 
 # The libhttpserver reference manual
-[![build](https://github.com/tipi-deps/libhttpserver/workflows/build/badge.svg)](https://github.com/tipi-deps/libhttpserver/actions?query=branch%3Amaster)
 
+[![build](https://github.com/tipi-deps/libhttpserver/workflows/tipi-build/badge.svg)](https://github.com/tipi-deps/libhttpserver/actions?query=branch%3Amaster)
 
 ![GA: Build Status](https://github.com/etr/libhttpserver/actions/workflows/verify-build.yml/badge.svg)
 
