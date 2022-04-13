@@ -8,9 +8,25 @@ Copyright (C)  2011-2019  Sebastiano Merlino.
     Free Documentation License".
 -->
 
+# Use libhttpserver with tipi-build
+
+If you want to use this library with tipi you can do :
+* `#include <httpserver.hpp> with .tipi/deps : `
+```
+{
+  "tipi-deps/libhttpserver" : { "@" : "master" }
+}
+```
+
+
 # The libhttpserver reference manual
+[![build](https://github.com/tipi-deps/libhttpserver/workflows/build/badge.svg)](https://github.com/tipi-deps/libhttpserver/actions?query=branch%3Amaster)
+
+
 ![GA: Build Status](https://github.com/etr/libhttpserver/actions/workflows/verify-build.yml/badge.svg)
+
 [![Build status](https://ci.appveyor.com/api/projects/status/ktoy6ewkrf0q1hw6/branch/master?svg=true)](https://ci.appveyor.com/project/etr/libhttpserver/branch/master)
+
 [![codecov](https://codecov.io/gh/etr/libhttpserver/branch/master/graph/badge.svg)](https://codecov.io/gh/etr/libhttpserver)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/1bd1e8c21f66400fb70e5a5ce357b525)](https://www.codacy.com/gh/etr/libhttpserver/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=etr/libhttpserver&amp;utm_campaign=Badge_Grade)
 [![Gitter chat](https://badges.gitter.im/etr/libhttpserver.png)](https://gitter.im/libhttpserver/community)
