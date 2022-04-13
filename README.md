@@ -8,20 +8,28 @@ Copyright (C)  2011-2019  Sebastiano Merlino.
     Free Documentation License".
 -->
 
-# Use libhttpserver with tipi-build
+# Using libhttpserver with tipi.build
 
-If you want to use this library with tipi you can do :
-* `#include <httpserver.hpp> with .tipi/deps : `
-```
+`libhttpserver` can be easily used in [tipi.build](https://tipi.build) projects simply by adding the following entry to your `.tipi/deps`:
+
+```json
 {
-  "tipi-deps/libhttpserver" : { "@" : "master" }
+  "tipi-deps/libhttpserver" : { "@" : "master"}
 }
 ```
 
+To try this you can run the following command in `/<path to tipi example>` (change the target name appropriately to `linux` or `macos` or `windows`):
+
+```bash
+tipi . -t <target>
+```
+
+If you want to use this library with tipi you can do :
+
+[![tipi.build](https://github.com/tipi-deps/libhttpserver/workflows/tipi.build/badge.svg)](https://github.com/tipi-deps/libhttpserver/actions?query=branch%3Amaster)
+
 
 # The libhttpserver reference manual
-
-[![build](https://github.com/tipi-deps/libhttpserver/workflows/tipi-build/badge.svg)](https://github.com/tipi-deps/libhttpserver/actions?query=branch%3Amaster)
 
 ![GA: Build Status](https://github.com/etr/libhttpserver/actions/workflows/verify-build.yml/badge.svg)
 
