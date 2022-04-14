@@ -32,13 +32,19 @@
 #include <netinet/tcp.h>
 #endif
 
+#if defined(_MSC_VER)
+#define strncasecmp _strnicmp
+#define strcasecmp _stricmp
+#else
+#include <strings.h>
+#endif
+
 #include <errno.h>
 #include <microhttpd.h>
 #include <signal.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <strings.h>
 #include <algorithm>
 #include <iosfwd>
 #include <cstring>
@@ -92,13 +98,13 @@ struct compare_value {
     }
 };
 
-#if !defined(_WIN32) && !defined(__MINGW32__) && !defined(__CYGWIN__)
+#if !defined(_WIN32) && !defined(__MINGW32__) && !defined(__CYGWIN__) && !defined(_MSC_VER)
 static void catcher(int) { }
 #endif
 
 static void ignore_sigpipe() {
 // Mingw doesn't implement SIGPIPE
-#if !defined(_WIN32) && !defined(__MINGW32__) && !defined(__CYGWIN__)
+#if !defined(_WIN32) && !defined(__MINGW32__) && !defined(__CYGWIN__) && !defined(_MSC_VER)
     struct sigaction oldsig;
     struct sigaction sig;
 

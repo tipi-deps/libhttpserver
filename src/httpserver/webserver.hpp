@@ -36,7 +36,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#if !defined(__MINGW32__)
+#if !(defined(__MINGW32__) || defined(_MSC_VER))
 #include <sys/socket.h>
 #endif
 

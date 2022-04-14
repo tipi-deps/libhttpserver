@@ -31,7 +31,7 @@
 
 // needed to force Vista as a bare minimum to have inet_ntop (libmicro defines
 // this to include XP support as a lower version).
-#if defined(__MINGW32__) || defined(__CYGWIN32__)
+#if defined(__MINGW32__) || defined(__CYGWIN32__) || defined(_MSC_VER)
 #define _WINDOWS
 #undef _WIN32_WINNT
 #define _WIN32_WINNT 0x600
@@ -45,7 +45,7 @@
 #include <microhttpd.h>
 #include <stddef.h>
 
-#if !defined(__MINGW32__)
+#if !(defined(__MINGW32__) || defined(_MSC_VER))
 #include <sys/socket.h>
 #endif
 

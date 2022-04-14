@@ -32,7 +32,13 @@
 
 #include <curl/curl.h>
 #include <signal.h>
+
+#if defined(_MSC_VER)
+#include <windows.h>
+#include<io.h>
+#else
 #include <unistd.h>
+#endif
 
 #include "./httpserver.hpp"
 #include "./littletest.hpp"

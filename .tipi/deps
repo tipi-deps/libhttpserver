@@ -1,4 +1,7 @@
-{   "tipi-deps/libmicrohttpd" : { } 
+{  
+    "tipi-deps/libmicrohttpd" : { } 
     ,"libuv/libuv":{"u":true, "packages":["libuv"],"src/targets":["uv"]}
-    ,"platform" :[ "CURL::+libcurl" ]
+    ,"cpp-pm/pthreads-win32:vs-16-2019-win64-cxx17" :{"u":true, "packages" : ["pthreads-win32"],"targets" : ["pthreads-win32::pthreads"]}
+    , "platform" :["CURL::+libcurl"]
+    , "platform:vs-16-2019-win64-cxx17" :["ZLIB::+zlib", "ZLIB::+zlib", "CURL::+libcurl", "OpenSSL::+SSL", "OpenSSL::+Crypto","target::crypt32", "target::ws2_32"]
 }

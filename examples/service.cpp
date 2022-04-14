@@ -18,7 +18,13 @@
      USA
 */
 
+#if defined(_MSC_VER)
+#include <windows.h>
+#include<io.h>
+#include <getopt.h>
+#else
 #include <unistd.h>
+#endif
 
 #include <cstdio>
 #include <iostream>

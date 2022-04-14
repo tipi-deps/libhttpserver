@@ -24,7 +24,19 @@
 #include <stddef.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+
+#if defined(_MSC_VER)
+#include <windows.h>
+#include<io.h>
+#if !defined(S_ISREG) && defined(S_IFMT) && defined(S_IFREG)
+  #define S_ISREG(m) (((m) & S_IFMT) == S_IFREG)
+#endif
+#if !defined(S_ISDIR) && defined(S_IFMT) && defined(S_IFDIR)
+  #define S_ISDIR(m) (((m) & S_IFMT) == S_IFDIR)
+#endif
+#else
 #include <unistd.h>
+#endif
 #include <iosfwd>
 
 struct MHD_Response;
@@ -43,7 +55,6 @@ MHD_Response* file_response::get_raw_response() {
 
     int fd = open(filename.c_str(), O_RDONLY);
     if (fd == -1) return nullptr;
-
     off_t size = lseek(fd, 0, SEEK_END);
     if (size == (off_t) -1) return nullptr;
 
